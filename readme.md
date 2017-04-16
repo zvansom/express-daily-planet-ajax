@@ -1,16 +1,17 @@
-#Articles with AJAX
+# Articles with AJAX
 
-Using the Daily Planet, implement the ability to add/remove articles using AJAX and proper RESTful verbs. If you're not comfortable with using your Daily Planet solution, we provided one for you.
+Implement the ability to add/remove articles using AJAX and proper RESTful verbs.
 
-##Routes
+## Goals
 
-The goal is to have your app use RESTful routing for all of your routes (see today's notes) and to have the edit and remove operations perform asynchronously (AJAX / jQuery).
+* use RESTful routing for all of your routes (see [today's notes](https://wdi_sea.gitbooks.io/notes/content/05-express/express-intro/05crudexpress.html))
+*  asynchronous edit and remove operations (AJAX / jQuery)
 
-##Starting point
+## Starting point
 
-Your articles index page `GET /articles/` should list all of the Daily Planet's articles (included in the starter code, but check to make sure your examples does this as well).
+Your articles index page `GET /articles/` should list all of the Daily Planet's articles (included in the starter code).
 
-###New Behavior
+### New Behavior
 
 * Delete articles on click
 	* create a delete button for each article on the articles index page
@@ -23,7 +24,7 @@ Your articles index page `GET /articles/` should list all of the Daily Planet's 
   * Once the edits have been made on the edit form, submit the data back to `PUT /article/:id`.
   * Note that after your AJAX call successfully edits the article, you can redirect back to the articles index page.
 
-##Clean it up
+## Clean it up
 
 Once you get AJAX working go back and start cleaning the app up. Here are some ideas.
 
