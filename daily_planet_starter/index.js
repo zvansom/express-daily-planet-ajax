@@ -8,6 +8,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/static'));
 
+// Example articles - change as you like! These ones are from 2016!
 var articles = [
     { title: 'Bernie! Bernie!', body: '#feelthebern' },
     { title: 'Trump for change!', body: 'Make America Great Again' },
@@ -29,7 +30,7 @@ app.get('/articles/new', function(req, res) {
 app.get('/articles/:index', function(req, res) {
     var index = parseInt(req.params.index);
     if (index < articles.length && index >= 0) {
-        res.render('articles/show', { article: articles[req.params.index] });
+        res.render('articles/show', { article: articles[req.params.index], index: index });
     } else {
         res.send('Error');
     }
@@ -42,6 +43,35 @@ app.post('/articles', function(req, res) {
 
 app.get('/about', function(req, res) {
     res.render('about');
+});
+
+app.get('/articles/edit/:index', function(req, res){
+  var index = parseInt(req.params.index);
+  if (index < articles.length && index >= 0) {
+    res.render('articles/edit', {article: articles[req.params.index], index: index});
+  } else {
+      res.send('Error');
+  }
+});
+
+app.put('/articles/:index', function(req, res) {
+    var index = parseInt(req.params.index);
+    if (index < articles.length && index >= 0) {
+        articles[req.params.index] = req.body;
+        res.send('success');
+    } else {
+        res.send('Error');
+    }
+});
+
+app.delete('/articles/:index', function(req, res) {
+    var index = parseInt(req.params.index);
+    if (index < articles.length && index >= 0) {
+        articles.splice(index, 1);
+        res.send('success');
+    } else {
+        res.send('Error');
+    }
 });
 
 app.listen(3000, function() {
