@@ -84,7 +84,7 @@ app.listen(3000, function() {
 });
 
 
-// Need to break these out of index.js eventually
+// Need to break these out of index.js eventually, but here's good for now.
 function getThisArticle(title) {
   return articles.filter( article => { return article.title === title });
 }
@@ -97,13 +97,17 @@ function editArticle(title, articleData) {
 }
 
 function deleteArticle(title) {
+  // Failsafe
   let index = -1;
 
+  // Get the first article's index that matches my title.
   for(let i = 0; i < articles.length; i++){
     if(articles[i].title === title){
       index = i;
       break;
     }
   }
+
+  // Get rid of the article at this index.
   articles.splice(index, 1);
 }
