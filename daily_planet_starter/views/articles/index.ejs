@@ -1,9 +1,17 @@
 <h1>Articles</h1>
 
+<%# Make a new article %>
 <a href="/articles/new" class="btn btn-primary">New Article</a>
 
-<% articles.forEach(function(article, idx) { %>
+ <%# Display all the articles.  They came in the request. %>
+<% articles.forEach(function(article) { %>
+
+  <% console.log('article', article); %>
+
+  <%# This div probably does something...bootstrapie. %>
   <div class="well">
-    <a href="/articles/<%= idx %>"><h2><%= article.title %></h2></a>
+
+    <%# Click this aritcle title to read it!  Go to this index to find it. %>
+    <a href="/articles/<%= article.title %>"><h2><%= article.title %></h2></a>
   </div>
 <% }); %>

@@ -1,15 +1,19 @@
 <h1>New Article</h1>
-
+<!-- Here's a place to write your new article -->
 <form action="/articles" method="POST" role="form">
+  <!-- Cool bootstrap!  Wish you had used bootstrap 4, but nbd -->
   <div class="form-group">
     <label for="title" class="hidden">Title</label>
+    <!-- Put your title here -->
     <input type="text" class="form-control" id="title" placeholder="Title" name="title">
   </div>
 
   <div class="form-group">
     <label for="body" class="hidden">Body</label>
+    <!-- And here's a big spot for all those cool words you came up with. -->
     <textarea type="text" class="form-control" id="body" placeholder="Body" name="body"></textarea>
   </div>
 
+  <!-- You should let me know when you're done. -->
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

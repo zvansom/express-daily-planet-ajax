@@ -1,5 +1,11 @@
+<%# Here's that title you wanted. %>
 <h1><%= article.title %></h1>
 
+<%# There's other word things here too. %>
 <div class="well">
   <p><%= article.body %></p>
 </div>
+
+<%# Here's a couple of buttons for clicking on. %>
+<a id="edit-btn" href="/articles/<%= article.title %>/edit" class="btn btn-warning" >Edit</a>
+<a id="delete-btn" href="/articles/<%= article.title %>" class="btn btn-danger" >Delete</a>
